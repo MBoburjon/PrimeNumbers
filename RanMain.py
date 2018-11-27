@@ -1,5 +1,5 @@
 import math
-
+from datetime import datetime
 
 def SieveAlgorithm():
     num = 200
@@ -32,15 +32,32 @@ def PrimalityTest(num):
 
         checkList = SieveAlgorithm()
         for x in checkList:
-            print(x)
-        for x in checkList:
             if num % x == 0 and num != x:
                 return False
 
     return True
+def JohnSelfridge(num):
+
+    result = math.pow(2, (num - 1))
+
+    print(result)
+    print((result % num))
+    if (result % num) == 1:
+        return True
+    else:
+        return False
 
 
+
+
+#start = timeit.default_timer()
+
+start = datetime.now()
 
 num = int(input("Enter num to check for primality:"))
 print(num)
-print(PrimalityTest(num))
+print(JohnSelfridge(num))
+
+#stop = timeit.default_timer()
+print("Time: ", datetime.now() - start)
+
