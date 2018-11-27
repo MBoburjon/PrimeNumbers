@@ -1,3 +1,2 @@
-
-
-print(2)
+def RandomGenerate:
+    print(2)
