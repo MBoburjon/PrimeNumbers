@@ -1,0 +1,40 @@
+import tkinter
+from tkinter import messagebox
+from tkinter import *
+
+
+top = tkinter.Tk()
+
+def helloCallBack():
+    messagebox.showinfo("Hello Python", "Hello World")
+
+
+w = tkinter.Button(top, text="Hello", padx=200, pady=200, bg="blue", command = helloCallBack())
+
+
+canvasTest = tkinter.Canvas (top, bg="blue", height=250, width=300)
+
+coord = 10, 50, 240, 210
+
+arc = canvasTest.create_arc(coord, start=0, extent=150, fill="red")
+
+
+CheckVar1 = IntVar()
+CheckVar2 = IntVar()
+
+check1 = tkinter.Checkbutton(top, text = "Music", variable = CheckVar1,
+                             onvalue = 1, offvalue = 0, height=5, width = 20)
+check2 = tkinter.Checkbutton(top, text = "video", variable = CheckVar2,
+onvalue = 1, offvalue = 0, height=5, width = 20)
+
+
+#check1.pack()
+#check2.pack()
+
+#canvasTest.pack()
+#w.pack()
+
+
+
+
+top.mainloop()
