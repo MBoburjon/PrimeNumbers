@@ -56,7 +56,7 @@ start = datetime.now()
 
 num = int(input("Enter num to check for primality:"))
 print(num)
-print(JohnSelfridge(num))
+print(PrimalityTest(num))
 
 #stop = timeit.default_timer()
 print("Time: ", datetime.now() - start)

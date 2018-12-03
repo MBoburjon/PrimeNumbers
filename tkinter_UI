@@ -1,39 +1,71 @@
 import tkinter
 from tkinter import messagebox
 from tkinter import *
+import math
+from datetime import datetime
 
 
 top = tkinter.Tk()
 
+
 def helloCallBack():
-    messagebox.showinfo("Hello Python", "Hello World")
+    global UserInput
+    string = UserInput.get()
+    number = int(string)
 
 
-w = tkinter.Button(top, text="Hello", padx=200, pady=200, bg="blue", command = helloCallBack())
+
+    #number = int(string)
+    print(number)
 
 
-canvasTest = tkinter.Canvas (top, bg="blue", height=250, width=300)
+    num = 200
+    Mylist = [True] * num
+    result = []
 
-coord = 10, 50, 240, 210
+    for x in range(2, int(math.sqrt(num))):
+        if Mylist[x] == True:
+            y = pow(x, 2)
+            count = 1
+            while y < num:
+                Mylist[y] = False
+                y = y + (x * count)
 
-arc = canvasTest.create_arc(coord, start=0, extent=150, fill="red")
+    for j in range(2, len(Mylist)):
+        if Mylist[j] == True:
+            result.append(j)
 
 
-CheckVar1 = IntVar()
-CheckVar2 = IntVar()
+    finalResult = True
 
-check1 = tkinter.Checkbutton(top, text = "Music", variable = CheckVar1,
-                             onvalue = 1, offvalue = 0, height=5, width = 20)
-check2 = tkinter.Checkbutton(top, text = "video", variable = CheckVar2,
-onvalue = 1, offvalue = 0, height=5, width = 20)
+    if number <= 3:
+        finalResult = (number > 1)
+    elif num % 2 == 0 or num % 3 == 0:
+        finalResult = False
+    else:
+
+        checkList = result
+        for x in checkList:
+            if num % x == 0 and num != x:
+                finalResult = False
+
+    print(finalResult)
 
 
-#check1.pack()
-#check2.pack()
 
-#canvasTest.pack()
-#w.pack()
 
+top.title("primeNumbers")
+#top.geometry("1240x780+300+300")
+UserInput = Entry(top)
+UserInput.pack()
+UserInput.focus_set()
+
+button1 = tkinter.Button(top, text="PrimeNumberGenerate", bg="blue", font=100, padx=100,pady=100)
+button2 = tkinter.Button(top, text="PrimalityTest",command = helloCallBack, bg="green",font=100, padx=100, pady=100)
+
+
+button1.pack()
+button2.pack()
 
 
 
