@@ -35,21 +35,6 @@ def PrimalityTest(num):
             if num % x == 0 and num != x:
                 return False
 
-
-
-    return True
-
-
-
-def PrimalityTestUpgrade(num):
-    result = False
-
-    if num <= 3:
-        return num > 1
-    elif num % 2 == 0 or num % 3 == 0:
-        return False
-    else:
-
         loop = 5
 
         while (loop * loop) <= num:
@@ -57,11 +42,12 @@ def PrimalityTestUpgrade(num):
                 return False
             loop = loop + 6
 
-
-
     return True
 
-#start = timeit.default_timer()
+
+
+
+
 
 start = datetime.now()
 
@@ -69,6 +55,6 @@ num = int(input("Enter num to check for primality:"))
 print(num)
 print(PrimalityTest(num))
 
-#stop = timeit.default_timer()
+
 print("Time: ", datetime.now() - start)
 

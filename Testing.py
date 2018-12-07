@@ -16,11 +16,10 @@ def approach3(givenNumber):
     return (primes)
 
 
-testing = number
+num = pow(10, 10) - 1
 
-if testing == ((((2 * number) + 1) - 1) / 2):
-    print("Prime")
-else:
-    print("not prime")
+result = approach3(num)
 
+for x in num:
+    print(x)
 
